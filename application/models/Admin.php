@@ -8,16 +8,18 @@ class Admin extends Model
 {
     public $error;
 
-    public function loginValidate($post) {
+    public function loginValidate($post)
+    {
         $config = require 'application/config/admin.php';
-        if($config['login'] != $post['login'] or $config['password'] != $post['password']) {
+        if ($config['login'] != $post['login'] or $config['password'] != $post['password']) {
             $this->error = 'Логин или пароль введены неверно';
             return false;
         }
         return true;
     }
 
-    public function postAdd($post) {
+    public function postAdd($post)
+    {
         $params = [
             'name' => $post['name'],
             'text' => $post['text'],
@@ -28,7 +30,8 @@ class Admin extends Model
         return $this->db->lastInsertId();
     }
 
-    public function postEdit($post, $id) {
+    public function postEdit($post, $id)
+    {
         $params = [
             'id' => $id,
             'name' => $post['name'],
@@ -37,18 +40,21 @@ class Admin extends Model
         $this->db->query('UPDATE posts SET name = :name, text = :text WHERE id = :id', $params);
     }
 
-    public function postUploadImage($path, $id) {
+    public function postUploadImage($path, $id)
+    {
         move_uploaded_file($path, 'public/materials/'.$id.'.jpg');
     }
 
-    public function isPostExists($id) {
+    public function isPostExists($id)
+    {
         $params = [
             'id' => $id,
         ];
         return $this->db->column('SELECT id FROM posts WHERE id = :id', $params);
     }
 
-    public function postDelete($id) {
+    public function postDelete($id)
+    {
         $params = [
             'id' => $id,
         ];
@@ -56,7 +62,8 @@ class Admin extends Model
         unlink('public/materials/'.$id.'.jpg');
     }
 
-    public function postData($id) {
+    public function postData($id)
+    {
         $params =[
             'id' => $id,
         ];

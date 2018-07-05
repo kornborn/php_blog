@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-<!--        <script type="text/javascript" src="/blog/public/scripts/ckeditor/ckeditor.js"></script>-->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title><?php echo $title; ?></title>
@@ -12,7 +11,7 @@
         <script src="/blog/public/scripts/form.js"></script>
         <script src="/blog/public/scripts/popper.js"></script>
         <script src="/blog/public/scripts/bootstrap.js"></script>
-        <script src="/blog/public/scripts/nicEdit.js"></script>
+        <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script>
     </head>
     <body class="fixed-nav sticky-footer bg-dark">
         <?php if ($this->route['action'] != 'login'): ?>
@@ -59,12 +58,8 @@
                         <small>&copy; 2018</small>
                     </div>
                 </div>
-                <script type="text/javascript">
-                    bkLib.onDomLoaded(
-                        function() {
-                            nicEditors.allTextAreas()
-                        }
-                    );
+                <<script type="text/javascript">
+                    bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
                 </script>
             </footer>
         <?php endif; ?>

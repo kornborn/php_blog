@@ -8,7 +8,8 @@ use application\models\Admin;
 
 class MainController extends Controller {
 
-    public function indexAction() {
+    public function indexAction()
+    {
         $pagination = new Pagination($this->route, $this->model->postsCount());
         $vars = [
             'pagination' => $pagination->get(),
@@ -18,7 +19,8 @@ class MainController extends Controller {
         $this->view->render('Главная страница', $vars);
     }
 
-    public function postAction() {
+    public function postAction()
+    {
         $adminModel = new Admin;
         if (!$adminModel->isPostExists($this->route['id'])) {
             $this->view->errorCode(404);

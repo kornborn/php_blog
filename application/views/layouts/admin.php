@@ -12,7 +12,6 @@
         <script src="/blog/public/scripts/form.js"></script>
         <script src="/blog/public/scripts/popper.js"></script>
         <script src="/blog/public/scripts/bootstrap.js"></script>
-        <script src="/blog/public/scripts/core.js"></script>
         <script src="/blog/public/scripts/nicEdit.js"></script>
     </head>
     <body class="fixed-nav sticky-footer bg-dark">

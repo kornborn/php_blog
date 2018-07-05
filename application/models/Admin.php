@@ -17,15 +17,14 @@ class Admin extends Model
         return true;
     }
 
-
     public function postAdd($post) {
         $params = [
-            'id' => '',
             'name' => $post['name'],
             'text' => $post['text'],
             'date' => date('Y-m-d'),
+            'views' => 0,
         ];
-        $this->db->query('INSERT INTO posts (id, name, text, date) VALUES (:id, :name, :text, :date)', $params);
+        $this->db->query('INSERT INTO posts (name, text, date, views) VALUES (:name, :text, :date, :views)', $params);
         return $this->db->lastInsertId();
     }
 

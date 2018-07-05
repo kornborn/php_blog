@@ -25,7 +25,7 @@ class AdminController extends Controller {
             $_SESSION['admin'] = true;
             $this->view->location('blog/admin/add');
         }
-        $this->view->render('Вход');
+        $this->view->render('Вход', $_POST);
     }
 
     public function addAction() {

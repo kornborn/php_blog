@@ -22,6 +22,6 @@ class Main extends Model
     }
 
     public function postsTop() {
-        return $this->db->row('SELECT * FROM posts WHERE date BETWEEN DATE_ADD(current_date, INTERVAL -7 DAY) AND current_date ORDER BY views DESC');
+        return $this->db->row('SELECT * FROM posts WHERE date BETWEEN DATE_ADD(current_date, INTERVAL -7 DAY) AND current_date ORDER BY views DESC LIMIT 10');
     }
 }

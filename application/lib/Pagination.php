@@ -10,6 +10,7 @@ class Pagination {
     private $current_page;
     private $total;
     private $limit;
+
     public function __construct($route, $total, $limit = 10) {
         $this->route = $route;
         $this->total = $total;
@@ -40,12 +41,14 @@ class Pagination {
         $html .= $links.' </ul></nav>';
         return $html;
     }
+
     private function generateHtml($page, $text = null) {
         if (!$text) {
             $text = $page;
         }
-        return '<li class="page-item"><a class="page-link" href="/'.$this->route['controller'].'/'.$this->route['action'].'/'.$page.'">'.$text.'</a></li>';
+        return '<li class="page-item"><a class="page-link" href="/blog/'.$this->route['controller'].'/'.$this->route['action'].'/'.$page.'">'.$text.'</a></li>';
     }
+
     private function limits() {
         $left = $this->current_page - round($this->max / 2);
         $start = $left > 0 ? $left : 1;
@@ -58,6 +61,7 @@ class Pagination {
         }
         return array($start, $end);
     }
+
     private function setCurrentPage() {
         if (isset($this->route['page'])) {
             $currentPage = $this->route['page'];
@@ -73,6 +77,7 @@ class Pagination {
             $this->current_page = 1;
         }
     }
+
     private function amount() {
         return ceil($this->total / $this->limit);
     }

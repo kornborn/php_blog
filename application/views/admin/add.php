@@ -12,14 +12,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Текст</label>
-                                <textarea id="editor1" rows="5" name="text"></textarea>
-                                <script type="text/javascript">
-                                    var ckeditor1 = CKEDITOR.replace( 'editor1' );
-                                    AjexFileManager.init({
-                                        returnTo: 'ckeditor',
-                                        editor: ckeditor1
-                                    });
-                                </script>
+                                <textarea class = "form-control" rows = "5" name ="text"></textarea>
                             </div>
                             <div class="form-group">
                                 <label>Изображение</label>

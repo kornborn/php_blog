@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'login' => '',
-    'password' => '',
+    'login' => 'admin',
+    'password' => '6331',
 ];

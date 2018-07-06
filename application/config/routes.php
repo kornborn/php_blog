@@ -2,44 +2,44 @@
 
 return [
     //MainController
-    'blog' => [
+    '' => [
         'controller' => 'main',
         'action' => 'index',
     ],
-    'blog/main/index/{page:\d+}' => [
+    'main/index/{page:\d+}' => [
         'controller' => 'main',
         'action' => 'index',
     ],
-    'blog/post/{id:\d+}' => [
+    'post/{id:\d+}' => [
         'controller' => 'main',
         'action' => 'post',
     ],
     //AdminController
-    'blog/admin/login' => [
+    'admin/login' => [
         'controller' => 'admin',
         'action' => 'login',
         ],
-    'blog/admin/logout' => [
+    'admin/logout' => [
         'controller' => 'admin',
         'action' => 'logout',
     ],
-    'blog/admin/add' => [
+    'admin/add' => [
         'controller' => 'admin',
         'action' => 'add',
     ],
-    'blog/admin/edit/{id:\d+}' => [
+    'admin/edit/{id:\d+}' => [
         'controller' => 'admin',
         'action' => 'edit',
     ],
-    'blog/admin/delete/{id:\d+}' => [
+    'admin/delete/{id:\d+}' => [
         'controller' => 'admin',
         'action' => 'delete',
     ],
-    'blog/admin/posts' => [
+    'admin/posts' => [
         'controller' => 'admin',
         'action' => 'posts',
     ],
-    'blog/admin/posts/{page:\d+}' => [
+    'admin/posts/{page:\d+}' => [
         'controller' => 'admin',
         'action' => 'posts',
     ],

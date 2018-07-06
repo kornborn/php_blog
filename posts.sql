@@ -19,7 +19,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `bd_blog`
+CREATE DATABASE IF NOT EXISTS `bd_blog` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `bd_blog`;
 --
 
 -- --------------------------------------------------------
@@ -28,6 +29,7 @@ SET time_zone = "+00:00";
 -- Структура таблицы `posts`
 --
 
+DROP TABLE IF EXISTS `posts`;
 CREATE TABLE `posts` (
   `id` int(11) NOT NULL,
   `name` text NOT NULL,
@@ -38,6 +40,8 @@ CREATE TABLE `posts` (
   `image` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+
+TRUNCATE TABLE `posts`;
 --
 -- Дамп данных таблицы `posts`
 --
@@ -50,6 +54,30 @@ INSERT INTO `posts` (`id`, `name`, `description`, `text`, `date`, `views`, `imag
 (8, 'POST 6', '', '<ul><li>jkyuktyjty tyj tyj tyjt jyp<br></li><li>[</li><li>\'</li><li>p[</li></ul><ol><li>pp[\'p[\'p[\'<br></li></ol>', '2018-07-06', 4, 1),
 (9, 'POst 7', '', '&nbsp;fw ef wefw gerg ergas gh regrthth', '2018-07-06', 0, 0);
 
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `name` text NOT NULL,
+  `pass` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Очистить таблицу перед добавлением данных `users`
+--
+
+TRUNCATE TABLE `users`;
+--
+-- Дамп данных таблицы `users`
+--
+
+INSERT INTO `users` VALUES(1, 'root', '123');
+
 --
 -- Индексы сохранённых таблиц
 --
@@ -61,6 +89,12 @@ ALTER TABLE `posts`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT для сохранённых таблиц
 --
 
@@ -69,6 +103,12 @@ ALTER TABLE `posts`
 --
 ALTER TABLE `posts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT для таблицы `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

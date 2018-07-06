@@ -1,4 +1,4 @@
-<header class="masthead" style="background-image: url('/blog/public/images/about-bg.jpg')">
+<header class="masthead" style="background-image: url('/public/images/about-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
@@ -18,7 +18,7 @@
                 <?php foreach ($list as $val): ?>
                     <div class="card mb-3">
                         <div class="card-header">
-                                <a href="/blog/post/<?php echo $val['id']; ?>">
+                                <a href="/post/<?php echo $val['id']; ?>">
                                     <h2 class="post-title"><?php echo htmlspecialchars($val['name'], ENT_QUOTES); ?></h2>
                                 </a>
                         </div>
@@ -27,17 +27,17 @@
                                 <div class="row">
                                     <?php if ($val['image']==1) : ?>
                                         <div class="col-3">
-                                                <img src='/blog/public/materials/<?php echo $val['id']; ?>.jpg'
+                                                <img src='/public/materials/<?php echo $val['id']; ?>.jpg'
                                                      class="img-fluid" onerror="this.style.display='none' " alt="photo">
                                         </div>
                                         <div class="col-9">
-                                            <a href="/blog/post/<?php echo $val['id']; ?>">
+                                            <a href="/post/<?php echo $val['id']; ?>">
                                                 <?php echo mb_substr($val['text'], 0, 300); ?>
                                             </a>
                                         </div>
                                     <?php else: ?>
                                         <div>
-                                            <a href="/blog/post/<?php echo $val['id']; ?>">
+                                            <a href="/post/<?php echo $val['id']; ?>">
                                                 <?php echo mb_substr($val['text'], 0, 300); ?>
                                             </a>
                                         </div>
@@ -59,7 +59,7 @@
                     <div class="card-header">Топовые посты недели</div>
                     <ul class="list-group list-group-flush">
                         <?php foreach ($top_list as $val): ?>
-                            <li class="list-group-item"><a href="/blog/post/<?php echo $val['id']; ?>"><?php echo htmlspecialchars($val['name'], ENT_QUOTES); ?></a></li>
+                            <li class="list-group-item"><a href="/post/<?php echo $val['id']; ?>"><?php echo htmlspecialchars($val['name'], ENT_QUOTES); ?></a></li>
                         <?php endforeach; ?>
                     </ul>
                 </div>

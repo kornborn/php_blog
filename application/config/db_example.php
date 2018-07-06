@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'host' => 'localhost',
-    'name' => '',
-    'user' => '',
-    'password' => '',
+    'host' => 'mysql',
+    'name' => 'bd_blog',
+    'user' => 'root',
+    'password' => '123',
 ];

@@ -5,7 +5,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-sm-4">
-                        <form action="/blog/admin/edit/<?php echo $data['id']; ?>" method="post" >
+                        <form action="/admin/edit/<?php echo $data['id']; ?>" method="post" >
                             <div class="form-group">
                                 <label>Название</label>
                                 <input class="form-control" type="text" value="<?php echo htmlspecialchars($data['name'], ENT_QUOTES); ?>" name="name">

@@ -18,14 +18,14 @@ class AdminController extends Controller
     {
         if(isset($_SESSION['admin']))
         {
-            $this->view->redirect('blog/admin/add');
+            $this->view->redirect('admin/add');
         }
         if (!empty($_POST)) {
             if (!$this->model->loginValidate($_POST)) {
                 $this->view->message('error', $this->model->error);
             }
             $_SESSION['admin'] = true;
-            $this->view->location('blog/admin/add');
+            $this->view->location('admin/add');
         }
         $this->view->render('Вход', $_POST);
     }
@@ -69,13 +69,13 @@ class AdminController extends Controller
             $this->view->errorCode(404);
         }
         $this->model->postDelete($this->route['id']);
-        $this->view->redirect('blog/admin/posts');
+        $this->view->redirect('admin/posts');
     }
 
     public function logoutAction()
     {
         unset($_SESSION['admin']);
-        $this->view->redirect('blog/admin/login');
+        $this->view->redirect('admin/login');
     }
 
     public function postsAction()

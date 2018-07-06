@@ -5,7 +5,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-sm-4">
-                        <form action="/blog/admin/add" method="post">
+                        <form action="/admin/add" method="post">
                             <div class="form-group">
                                 <label>Название</label>
                                 <input class="form-control" type="text" name="name">

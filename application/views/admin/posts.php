@@ -17,12 +17,12 @@
                                 <?php foreach ($list as $val): ?>
                                     <tr>
                                         <td>
-                                            <a href="/blog/post/<?php echo $val['id']; ?>">
+                                            <a href="/post/<?php echo $val['id']; ?>">
                                             <?php echo htmlspecialchars($val['name'], ENT_QUOTES); ?>
                                             </a>
                                         </td>
-                                        <td><a href="/blog/admin/edit/<?php echo $val['id']; ?>" class="btn btn-primary">Редактировать</a></td>
-                                        <td><a href="/blog/admin/delete/<?php echo $val['id']; ?>" class="btn btn-danger">Удалить</a></td>
+                                        <td><a href="/admin/edit/<?php echo $val['id']; ?>" class="btn btn-primary">Редактировать</a></td>
+                                        <td><a href="/admin/delete/<?php echo $val['id']; ?>" class="btn btn-danger">Удалить</a></td>
                                     </tr>
                                 <?php endforeach; ?>
                             </table>

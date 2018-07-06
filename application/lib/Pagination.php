@@ -49,7 +49,7 @@ class Pagination {
         if (!$text) {
             $text = $page;
         }
-        return '<li class="page-item"><a class="page-link" href="/blog/'.$this->route['controller'].'/'.$this->route['action'].'/'.$page.'">'.$text.'</a></li>';
+        return '<li class="page-item"><a class="page-link" href="/'.$this->route['controller'].'/'.$this->route['action'].'/'.$page.'">'.$text.'</a></li>';
     }
 
     private function limits()

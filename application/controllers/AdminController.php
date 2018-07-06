@@ -37,7 +37,9 @@ class AdminController extends Controller
             if (!$id) {
                 $this->view->message('error', 'Ошибка обработки запроса');
             }
-            $this->model->postUploadImage($_FILES['img']['tmp_name'], $id);
+            if ($_FILES['img']['tmp_name']) {
+                $this->model->postUploadImage($_FILES['img']['tmp_name'], $id);
+            }
             $this->view->message('success', 'Пост добавлен');
         }
         $this->view->render('Добавить пост');

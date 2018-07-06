@@ -12,28 +12,36 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8">
-            <?php if (empty($list)): ?>
+            <?php if (empty($list)) : ?>
                 <p>Список постов пуст</p>
             <?php else: ?>
                 <?php foreach ($list as $val): ?>
                     <div class="card mb-3">
                         <div class="card-header">
-                            <a href="/blog/post/<?php echo $val['id']; ?>">
-                                <h2 class="post-title"><?php echo htmlspecialchars($val['name'], ENT_QUOTES); ?></h2>
-                            </a>
+                                <a href="/blog/post/<?php echo $val['id']; ?>">
+                                    <h2 class="post-title"><?php echo htmlspecialchars($val['name'], ENT_QUOTES); ?></h2>
+                                </a>
                         </div>
                         <div class="card-body">
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-3">
-                                        <img src='/blog/public/materials/<?php echo $val['id']; ?>.jpg'
-                                             class="img-fluid" onerror="this.style.display='none' " alt="photo">
-                                    </div>
-                                    <div class="col-9">
-                                        <a href="/blog/post/<?php echo $val['id']; ?>">
-                                            <?php echo mb_substr($val['text'], 0, 300); ?>
-                                        </a>
-                                    </div>
+                                    <?php if (!empty($val['image'])) : ?>
+                                        <div class="col-3">
+                                                <img src='/blog/public/materials/<?php echo $val['id']; ?>.jpg'
+                                                     class="img-fluid" onerror="this.style.display='none' " alt="photo">
+                                        </div>
+                                        <div class="col-9">
+                                            <a href="/blog/post/<?php echo $val['id']; ?>">
+                                                <?php echo mb_substr($val['text'], 0, 300); ?>
+                                            </a>
+                                        </div>
+                                    <?php else: ?>
+                                        <div>
+                                            <a href="/blog/post/<?php echo $val['id']; ?>">
+                                                <?php echo mb_substr($val['text'], 0, 300); ?>
+                                            </a>
+                                        </div>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                         </div>
@@ -45,7 +53,7 @@
             <?php endif; ?>
         </div>
 
-        <?php if (!empty($list)): ?>
+        <?php if (!empty($list)) : ?>
             <div class="col-md-4">
                 <div class="card" style="width: 20rem;">
                     <div class="card-header">Топовые посты недели</div>

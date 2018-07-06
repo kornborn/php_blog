@@ -42,6 +42,7 @@ class Admin extends Model
 
     public function postUploadImage($path, $id)
     {
+        $this->db->query('INSERT INTO posts (image) VALUES 1');
         move_uploaded_file($path, 'public/materials/'.$id.'.jpg');
     }
 

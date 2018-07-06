@@ -25,7 +25,7 @@
                         <div class="card-body">
                             <div class="container">
                                 <div class="row">
-                                    <?php if (!empty($val['image'])) : ?>
+                                    <?php if ($val['image']==1) : ?>
                                         <div class="col-3">
                                                 <img src='/blog/public/materials/<?php echo $val['id']; ?>.jpg'
                                                      class="img-fluid" onerror="this.style.display='none' " alt="photo">

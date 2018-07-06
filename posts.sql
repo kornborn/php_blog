@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost
--- Время создания: Июл 06 2018 г., 06:30
+-- Время создания: Июл 06 2018 г., 06:54
 -- Версия сервера: 10.1.33-MariaDB
 -- Версия PHP: 7.2.6
 
@@ -35,7 +35,7 @@ CREATE TABLE `posts` (
   `text` text NOT NULL,
   `date` date NOT NULL,
   `views` int(11) NOT NULL,
-  `image` tinyint(1) NOT NULL
+  `image` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
